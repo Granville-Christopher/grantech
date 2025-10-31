@@ -30,8 +30,9 @@ const Hero: React.FC = () => {
 
       {/* --- CUSTOM DIAGONAL IMAGE BACKGROUND --- */}
       {/* This element is positioned behind the main text (z-10) and has the visual image/effect. */}
+      {/* className="absolute inset-y-0 rght-00 w-full h-full md:w-3/5 lg:w-1/2 z-1 transform skew-x-[-20deg] origin-bottom-rght opacity-30 md:opacity-20" // Skew for diagonal look */}
       <div
-        className="absolute inset-y-0 rght-00 w-full h-full origin-bottom-rght opacity-30 md:opacity-20" // Skew for diagonal look
+        className="absolute inset-y-0  w-full origin-bottom-rght opacity-30 md:opacity-20" // Skew for diagonal look
         style={{
           // Use a placeholder image URL for the background
           backgroundImage: "url('/ytyt.jpg')",
