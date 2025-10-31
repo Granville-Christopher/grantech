@@ -34,7 +34,7 @@ const Hero: React.FC = () => {
         className="absolute inset-y-0 right-0 w-full md:w-3/5 lg:w-1/2 z-1 transform skew-x-[-15deg] origin-top-rght opacity-30 md:opacity-0" // Skew for diagonal look
         style={{
           // Use a placeholder image URL for the background
-          backgroundImage: "url('/src/assets/ytyt.jpg')",
+          backgroundImage: "url('/ytyt.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           // The image needs to be large enough to handle the skew and still cover the area
