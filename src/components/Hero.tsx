@@ -31,12 +31,12 @@ const Hero: React.FC = () => {
       {/* --- CUSTOM DIAGONAL IMAGE BACKGROUND --- */}
       {/* This element is positioned behind the main text (z-10) and has the visual image/effect. */}
       <div
-        className="absolute inset-y-0 right-0 w-full md:w-3/5 lg:w-1/2 z-1 transform skew-x-[-15deg] origin-top-rght opacity-30 md:opacity-0" // Skew for diagonal look
+        className="absolute inset-y-0 rght-00 w-full md:w-3/5 lg:w-1/2 z-1 transform skew-x-[-20deg] origin-bottom-rght opacity-30 md:opacity-0" // Skew for diagonal look
         style={{
           // Use a placeholder image URL for the background
           backgroundImage: "url('/ytyt.jpg')",
           backgroundSize: "cover",
-          backgroundPosition: "center",
+          backgroundPosition: "right",
           // The image needs to be large enough to handle the skew and still cover the area
         }}
       >
