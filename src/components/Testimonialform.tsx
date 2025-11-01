@@ -1,26 +1,12 @@
 import React, { type FormEvent } from "react";
 
-interface Testimonial {
-  id: number;
-  text: string;
-  name: string;
-  role: string;
-}
+// interface Testimonial {
+//   id: number;
+//   text: string;
+//   name: string;
+//   role: string;
+// }
 
-const testimonials: Testimonial[] = [
-  {
-    id: 1,
-    text: "Working with Granville Technologies was an exceptional experience — from planning to deployment, everything was seamless.",
-    name: "Sarah Thompson",
-    role: "CTO, Nova Systems",
-  },
-  {
-    id: 2,
-    text: "Their attention to detail and design thinking helped us transform our product into something truly world-class.",
-    name: "Michael O’Connor",
-    role: "Product Designer, PixelWave",
-  },
-];
 
 const TestimonialsSection: React.FC = () => {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
