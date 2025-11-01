@@ -8,6 +8,7 @@ import HorizontalTicker from "../components/HorizontalTicker";
 import TechStack from "../components/TechStack";
 import WhyUs from "../components/WhyUs";
 import Proof from "../components/Proof";
+import Testimonialform from "../components/Testimonialform";
 import Process from "../components/Process";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
@@ -27,6 +28,7 @@ const HomePage: React.FC = () => {
         <WhyUs />
         <Achievements />
         <Proof />
+        <Testimonialform />
         <Process />
         <Contact />
       </main>
