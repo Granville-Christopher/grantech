@@ -54,8 +54,14 @@ const Footer: React.FC = () => {
             href="mailto:inquire@grantech.com"
             className="hover:text-blue-900 transition"
           >
-            inquire@grantech.com
+            inquire@granvilletechnologies.com
           </a>
+        </div>
+        <div className="copyright">
+          <p className="mt-4 text-sm text-blue-700">
+            &copy; {new Date().getFullYear()} GranTech IT Solutions. All rights
+            reserved.
+          </p>
         </div>
       </div>
     </footer>

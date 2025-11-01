@@ -1,18 +1,17 @@
 import React from "react";
 import { COMPETENCIES } from "./data";
+// import "./ticker.css"; // make sure to import the CSS below
 
 const HorizontalTicker: React.FC = () => {
+  // Duplicate content to enable seamless infinite scroll
   const content = [...COMPETENCIES, ...COMPETENCIES].map((phrase, index) => (
-    <span
-      key={index}
-      className="text-sm md:text-xl font-extrabold text-blue-700 opacity-90 mx-6 md:mx-16 tracking-wider"
-    >
+    <span key={index} className="ticker-item">
       • {phrase} •
     </span>
   ));
 
   return (
-    <section className="py-3 md:py-5 bg-blue-100/50 border-y border-blue-200">
+    <section className="py-3 md:py-5 bg-blue-100/40 border-y border-blue-200 backdrop-blur-sm">
       <div className="ticker-wrapper">
         <div className="ticker-animation">{content}</div>
       </div>

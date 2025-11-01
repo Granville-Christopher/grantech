@@ -56,54 +56,76 @@ const CustomStyles: React.FC = () => (
 
       /* Horizontal Ticker Animation */
       /* Horizontal Ticker Animation */
+      :root {
+        --ticker-duration: 40s; /* increase = slower, decrease = faster */
+      }
+      
+      /* Safety: prevent page horizontal overflow */
+      html, body {
+        overflow-x: hidden !important;
+      }
+      
+      /* wrapper */
+      .ticker-wrapper {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        padding: 0.5rem 0;               /* vertical breathing room */
+        background: rgba(239, 246, 255, 0.15); /* faint blue-ish band (optional) */
+        border-radius: 9999px;
+      }
+      
+      /* inner track - contents duplicated for perfect loop */
+      .ticker-animation {
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+        width: max-content;              /* important for exact duplication */
+        animation: ticker-scroll var(--ticker-duration) linear infinite;
+        will-change: transform;
+      }
+      
+      /* animation scrolls the full duplicate set by -50% */
       @keyframes ticker-scroll {
         0% { transform: translateX(0); }
         100% { transform: translateX(-50%); }
       }
       
-      /* Wrapper to constrain overflow */
-      .ticker-wrapper {
-        width: 100vw;
-        overflow: hidden;
-        position: relative;
-        box-sizing: border-box;
-      }
-      
-      /* Scrolling inner content */
-      .ticker-animation {
-        display: flex;
-        align-items: center;
-        white-space: nowrap;
-        animation: ticker-scroll 30s linear infinite;
-        will-change: transform;
-      }
-      
-      /* ✅ Pause on hover */
+      /* pause on hover */
       .ticker-wrapper:hover .ticker-animation {
         animation-play-state: paused;
       }
       
-      .ticker-animation > * {
+      /* each item style */
+      .ticker-item {
+        display: inline-block;
         flex-shrink: 0;
+        margin-right: 2.5rem;            /* spacing between items */
+        font-weight: 700;
+        font-size: 0.95rem;
+        color: #1e40af;                  /* blue-800 (tailwind-ish) */
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        padding: 0.25rem 0.4rem;
+        border-radius: 0.5rem;
+        background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0));
       }
       
-      /* Responsive animation speeds */
+      /* responsive: slower on small screens if you want even more readable */
       @media (max-width: 1024px) {
-        .ticker-animation {
-          animation-duration: 20s;
-        }
+        :root { --ticker-duration: 45s; }
+        .ticker-item { font-size: 0.92rem; margin-right: 2rem; }
       }
-      
       @media (max-width: 768px) {
-        .ticker-animation {
-          animation-duration: 15s;
-        }
+        :root { --ticker-duration: 50s; }
+        .ticker-item { font-size: 0.9rem; margin-right: 1.6rem; }
       }
-      
       @media (max-width: 480px) {
-        .ticker-animation {
-          animation-duration: 12s;
-        }
+        :root { --ticker-duration: 55s; }
+        .ticker-item { font-size: 0.88rem; margin-right: 1.2rem; }
       }
       
       /* Safety: disable horizontal overflow globally */

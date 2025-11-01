@@ -10,11 +10,11 @@ const Services: React.FC = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2
-          className={`md:text-4xl text-3xl font-extrabold text-center mb-4 text-gray-900 animate-slide-in`}
+          className={`md:text-4xl text-2xl font-extrabold text-center mb-4 text-gray-900 animate-slide-in`}
         >
           Full-Spectrum Digital Solutions
         </h2>
-        <p className="text-center text-base md:text-lg text-gray-600 mb-16 max-w-3xl mx-auto animate-slide-in animate-delay-1">
+        <p className="text-center text-base md:text-lg text-gray-600 md:mb-16 mb-8 max-w-3xl mx-auto animate-slide-in animate-delay-1">
           Our service model covers the entire product lifecycle, from
           initial strategy to ongoing maintenance and optimization.
         </p>

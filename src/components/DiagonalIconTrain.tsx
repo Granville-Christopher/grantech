@@ -20,7 +20,7 @@ const DiagonalIconTrain: React.FC<{
 
   return (
     <div
-      className={`absolute h-full w-64 md:w-96 pointer-events-none opacity-20 hidden md:block ${offsetClass}`}
+      className={`absolute h-full w-64 md:w-96 pointer-events-none opacity-10 hidden md:block ${offsetClass}`}
     >
       <div
         className={`flex flex-col space-y-12`}
@@ -33,10 +33,10 @@ const DiagonalIconTrain: React.FC<{
         {icons.map((icon, index) => (
           <div
             key={index}
-            className="text-5xl md:text-6xl text-blue-500 p-3 rounded-xl bg-white/50 shadow-2xl transform skew-y-[-10deg] opacity-70"
+            className="text-5xl md:text-6xl text-blue-500 p-3 rounded-xl bg-white/50 shadow-2xl transform skew-y-[-10deg] opacity-20"
             style={{
               marginLeft: `${(index % 4) * 20}px`,
-              opacity: index % 5 === 0 ? 0.9 : 0.7,
+              opacity: index % 5 === 0 ? 0.2 : 0.2,
             }}
           >
             {icon}
