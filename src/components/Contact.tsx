@@ -10,7 +10,7 @@ const Contact: React.FC = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Text colors adjusted for contrast against the light gradient */}
-        <h2 className="text-3xl md:text-4xl  font-extrabold text-gray-900 mb-4 animate-slide-in">
+        <h2 className="text-2xl md:text-4xl  font-extrabold text-gray-900 mb-4 animate-slide-in">
           Stop Waiting. Start Building.
         </h2>
         <p className="text-base md:text-xl text-gray-700 mb-10 animate-slide-in animate-delay-1">

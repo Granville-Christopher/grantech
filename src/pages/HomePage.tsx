@@ -12,6 +12,7 @@ import Testimonialform from "../components/Testimonialform";
 import Process from "../components/Process";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
+import FounderSection from "../components/founder";
 
 const HomePage: React.FC = () => {
   return (
@@ -31,6 +32,7 @@ const HomePage: React.FC = () => {
         <Testimonialform />
         <Process />
         <Contact />
+        <FounderSection />
       </main>
 
       <Footer />
