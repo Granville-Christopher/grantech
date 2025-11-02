@@ -19,7 +19,7 @@ const HappyNewMonth: React.FC = () => {
           animate={{ opacity: 1, filter: "blur(0px)" }}
           exit={{ opacity: 0, filter: "blur(10px)" }}
           transition={{ duration: 1 }}
-          className="fixed inset-0 z-[9999] flex items-center justify-center bg-white/30 backdrop-blur-lg overflow-hidden"
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/30 backdrop-blur-lg overflow-hidden"
         >
           {/* Close Button */}
           <button
