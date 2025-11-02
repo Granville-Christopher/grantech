@@ -107,7 +107,7 @@ const HappyNewMonth: React.FC = () => {
             <p className="text-blue-700 text-sm">
               With ❤️ from{" "}
               <b
-                className="font-semibold text-blue-900 underline"
+                className="font-semibold text-blue-900 cursor-pointer"
               >
                 Granville Technologies (GranTech)
               </b>
