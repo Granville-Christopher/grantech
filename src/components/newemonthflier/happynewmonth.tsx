@@ -19,7 +19,7 @@ const HappyNewMonth: React.FC = () => {
           animate={{ opacity: 1, filter: "blur(0px)" }}
           exit={{ opacity: 0, filter: "blur(10px)" }}
           transition={{ duration: 1 }}
-          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/30 backdrop-blur-lg overflow-hidden"
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-white/30 backdrop-blur-lg overflow-hidden"
         >
           {/* Close Button */}
           <button
@@ -36,14 +36,14 @@ const HappyNewMonth: React.FC = () => {
               key={i}
               className="absolute text-3xl select-none pointer-events-none"
               initial={{
-                x: Math.random() * 200 - 100, // random horizontal offset near center
+                x: Math.random() * 200 - 100,
                 y: -150,
                 opacity: 0.8,
               }}
               animate={{
                 y: [0, 400],
                 opacity: [1, 0.9, 0],
-                x: [Math.random() * 120 - 60, Math.random() * 120 - 60], // subtle side motion
+                x: [Math.random() * 120 - 60, Math.random() * 120 - 60], 
                 rotate: [0, 180, 360],
               }}
               transition={{
