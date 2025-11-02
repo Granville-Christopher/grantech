@@ -43,7 +43,7 @@ const HappyNewMonth: React.FC = () => {
               animate={{
                 y: [0, 400],
                 opacity: [1, 0.9, 0],
-                x: [Math.random() * 120 - 60, Math.random() * 120 - 60], 
+                x: [Math.random() * 120 - 60, Math.random() * 120 - 60],
                 rotate: [0, 180, 360],
               }}
               transition={{
@@ -79,8 +79,9 @@ const HappyNewMonth: React.FC = () => {
             </div>
 
             {/* Title */}
-            <h1 className="text-3xl md:text-4xl font-extrabold text-blue-900 mb-3">
-              🎉 Happy New Month! 🎉
+            <h1 className="text-2xl mt-8 md:text-4xl font-extrabold text-blue-900 mb-3">
+              Happy New Month! <br />
+              🎊
             </h1>
 
             {/* Subtext */}
