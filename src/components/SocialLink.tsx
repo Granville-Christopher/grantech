@@ -27,6 +27,8 @@ const SocialLink: React.FC<SocialLinkProps> = ({ name, icon, color, href }) => (
   <a
     href={href || "#"}
     aria-label={name}
+    target="_blank"
+    rel="noopener noreferrer"
     className="w-10 h-10 flex items-center justify-center rounded-full text-white font-bold shadow-md transition-all duration-300 hover:scale-110 no-underline"
     style={{
       backgroundColor: color,

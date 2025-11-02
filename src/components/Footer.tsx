@@ -1,7 +1,7 @@
 import React from "react";
 import SocialLink from "./SocialLink";
-import { FaInstagram, FaWhatsapp, FaXTwitter } from "react-icons/fa6";
-
+import { FaInstagram, FaWhatsapp,  } from "react-icons/fa6";
+// FaXTwitter;
 const Footer: React.FC = () => {
   return (
     <footer
@@ -16,29 +16,39 @@ const Footer: React.FC = () => {
           future.
         </p>
 
-        <div className="flex justify-center mt-6 mb-8 border-t border-b border-blue-400/50 py-4 space-x-4">
-          <SocialLink
-            name="Instagram"
-            icon={<FaInstagram />}
-            color="#E1306C"
-            href="https://instagram.com/grantech_it_solutions"
-          />
+        <div className="border-t border-b mt-6 mb-8">
+          <div className="flex justify-center pt-4">
+            <i className="text-blue-700 text-xs md:text-sm ">follow us on</i>
+          </div>
+          <div className="flex justify-center   border-blue-400/50 py-4 space-x-4">
+            <SocialLink
+              name="Instagram"
+              icon={<FaInstagram />}
+              color="#E1306C"
+              href="https://instagram.com/grantech_it_solutions"
+            />
 
-          <SocialLink name="Threads" icon="@" color="#333333" />
+            <SocialLink
+              name="Threads"
+              icon="@"
+              href="https://www.threads.com/@grantech_it_solutions"
+              color="#333333"
+            />
 
-          <SocialLink
-            name="WhatsApp"
-            icon={<FaWhatsapp />}
-            color="#25D366"
-            href="https://wa.me/+2347051962741"
-          />
+            <SocialLink
+              name="WhatsApp"
+              icon={<FaWhatsapp />}
+              color="#25D366"
+              href="https://wa.me/+2347051962741"
+            />
 
-          <SocialLink
-            name="X (Twitter)"
-            icon={<FaXTwitter />}
-            color="#000000"
-            href="https://twitter.com/yourhandle"
-          />
+            {/* <SocialLink
+              name="X (Twitter)"
+              icon={<FaXTwitter />}
+              color="#000000"
+              href="https://twitter.com/yourhandle"
+            /> */}
+          </div>
         </div>
 
         <div className="mt-4 space-x-6 text-sm text-blue-700">
