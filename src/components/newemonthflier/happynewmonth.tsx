@@ -7,7 +7,7 @@ const HappyNewMonth: React.FC = () => {
   const confetti = ["🎉", "🎊"];
 
   useEffect(() => {
-    const timer = setTimeout(() => setShow(false), 15000); // Hide after 10s
+    const timer = setTimeout(() => setShow(false), 15000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -30,28 +30,33 @@ const HappyNewMonth: React.FC = () => {
           </button>
 
           {/* Floating Confetti */}
+          {/* Floating Confetti - centered around the flier */}
           {confetti.map((icon, i) => (
             <motion.div
               key={i}
-              className="absolute text-3xl select-none"
+              className="absolute text-3xl select-none pointer-events-none"
               initial={{
-                x: Math.random() * window.innerWidth,
-                y: -50,
+                x: Math.random() * 200 - 100, // random horizontal offset near center
+                y: -150,
                 opacity: 0.8,
               }}
               animate={{
-                y: [0, window.innerHeight + 100],
-                opacity: [1, 0.8, 0],
-                x: [
-                  Math.random() * window.innerWidth - 50,
-                  Math.random() * window.innerWidth + 50,
-                ],
+                y: [0, 400],
+                opacity: [1, 0.9, 0],
+                x: [Math.random() * 120 - 60, Math.random() * 120 - 60], // subtle side motion
+                rotate: [0, 180, 360],
               }}
               transition={{
-                duration: 5 + Math.random() * 5,
+                duration: 4 + Math.random() * 4,
                 repeat: Infinity,
-                ease: "linear",
-                delay: i * 0.5,
+                ease: "easeInOut",
+                delay: i * 0.6,
+              }}
+              style={{
+                left: "50%",
+                top: "50%",
+                transform: "translate(-50%, -50%)",
+                zIndex: 20,
               }}
             >
               {icon}
