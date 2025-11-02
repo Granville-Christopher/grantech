@@ -106,14 +106,11 @@ const HappyNewMonth: React.FC = () => {
 
             <p className="text-blue-700 text-sm">
               With ❤️ from{" "}
-              <a
-                href="https://gran-tech.vercel.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-semibold hover:underline"
+              <b
+                className="font-semibold text-blue-900 underline"
               >
                 Granville Technologies (GranTech)
-              </a>
+              </b>
             </p>
           </motion.div>
         </motion.div>
