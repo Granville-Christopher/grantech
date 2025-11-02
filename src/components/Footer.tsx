@@ -51,10 +51,10 @@ const Footer: React.FC = () => {
           </a>
           <span className="opacity-50">|</span>
           <a
-            href="mailto:granvillechristopher@outlook.com"
+            href="mailto:contactgrantech@gmail.com"
             className="hover:text-blue-900 transition"
           >
-            granvillechristopher@outlook.com
+            contactgrantech@gmail.com
           </a>
         </div>
         <div className="copyright">
