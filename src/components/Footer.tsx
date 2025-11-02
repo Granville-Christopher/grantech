@@ -30,7 +30,7 @@ const Footer: React.FC = () => {
             name="WhatsApp"
             icon={<FaWhatsapp />}
             color="#25D366"
-            href="https://wa.me/yourphonenumber"
+            href="https://wa.me/+2347051962741"
           />
 
           <SocialLink
@@ -51,10 +51,10 @@ const Footer: React.FC = () => {
           </a>
           <span className="opacity-50">|</span>
           <a
-            href="mailto:inquire@grantech.com"
+            href="mailto:granvillechristopher@outlook.com"
             className="hover:text-blue-900 transition"
           >
-            inquire@granvilletechnologies.com
+            granvillechristopher@outlook.com
           </a>
         </div>
         <div className="copyright">
