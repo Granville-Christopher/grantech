@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
             name="Instagram"
             icon={<FaInstagram />}
             color="#E1306C"
-            href="https://instagram.com/yourhandle"
+            href="https://instagram.com/grantech_it_solutions"
           />
 
           <SocialLink name="Threads" icon="@" color="#333333" />
