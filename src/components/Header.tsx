@@ -47,7 +47,7 @@ const Header: React.FC = () => {
 
         {/* 🔹 Mobile "Call Us" button (Liquid Glass Blue Style) */}
         <a
-          href="tel:+2349133871053"
+          href="tel:+2347051962741"
           className="inline-flex md:hidden relative overflow-hidden px-5 py-2 text-sm font-semibold rounded-full backdrop-blur-lg hover:bg-blue-600 shadow-[inset_0_1px_2px_rgba(255,255,255,0.5),_0_4px_12px_rgba(0,0,0,0.2)] transition-all duration-500 transform hover:scale-95 hover:shadow-[inset_0_1px_3px_rgba(255,255,255,0.7),_0_6px_18px_rgba(0,0,0,0.25)]"
         >
           {/* <span className="absolute inset-0 bg-gradient-to-t from-blac/40 via-transparent to-transparent opacity-40 hover:text-white"></span> */}
