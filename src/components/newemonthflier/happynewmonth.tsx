@@ -7,7 +7,7 @@ const HappyNewMonth: React.FC = () => {
   const confetti = ["🎉", "🎊"];
 
   useEffect(() => {
-    const timer = setTimeout(() => setShow(false), 15000);
+    const timer = setTimeout(() => setShow(false), 12000);
     return () => clearTimeout(timer);
   }, []);
 
