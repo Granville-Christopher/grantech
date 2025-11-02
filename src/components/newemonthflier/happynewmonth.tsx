@@ -24,7 +24,7 @@ const HappyNewMonth: React.FC = () => {
           {/* Close Button */}
           <button
             onClick={() => setShow(false)}
-            className="absolute top-[calc(50%-260px)] md:top-[calc(50%-320px)] text-black/80 hover:text-red-500 transition-all"
+            className="absolute top-[calc(50%-320px)] text-black/80 hover:text-red-500 transition-all"
           >
             <X size={28} />
           </button>
