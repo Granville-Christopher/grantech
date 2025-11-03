@@ -1,7 +1,7 @@
 import React from "react";
 import SocialLink from "./SocialLink";
-import { FaInstagram, FaWhatsapp,  } from "react-icons/fa6";
-// FaXTwitter;
+import { FaInstagram, FaWhatsapp, FaXTwitter } from "react-icons/fa6";
+
 const Footer: React.FC = () => {
   return (
     <footer
@@ -42,12 +42,12 @@ const Footer: React.FC = () => {
               href="https://wa.me/+2347051962741"
             />
 
-            {/* <SocialLink
+            <SocialLink
               name="X (Twitter)"
               icon={<FaXTwitter />}
               color="#000000"
-              href="https://twitter.com/yourhandle"
-            /> */}
+              href="https://x.com/GranTech_?s=09"
+            />
           </div>
         </div>
 
