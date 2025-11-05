@@ -10,7 +10,7 @@ const Header: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // 🌈 Apple Liquid Glass header
+  // Apple Liquid Glass header
   const headerClasses = isScrolled
     ? "bg-white/30 backdrop-blur-[10px] shadow-[inset_0_1px_2px_rgba(255,255,255,0.6),_inset_0_-1px_3px_rgba(0,0,0,0.05),_0_4px_12px_rgba(255,255,255,0.2)] py-2"
     : "bg-transparent backdrop-blur-[2px] py-4";

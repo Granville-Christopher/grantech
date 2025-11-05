@@ -13,6 +13,7 @@ import Process from "../components/Process";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 import FounderSection from "../components/founder";
+import TrainingSection from "../components/servicesstudents";
 import HappyNewMonth from "../components/newemonthflier/happynewmonth";
 
 const HomePage: React.FC = () => {
@@ -33,6 +34,7 @@ const HomePage: React.FC = () => {
         <Testimonialform />
         <Process />
         <Contact />
+        <TrainingSection />
         <FounderSection />
         <HappyNewMonth />
       </main>
