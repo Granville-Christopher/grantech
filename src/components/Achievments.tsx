@@ -32,10 +32,10 @@ const Achievements: React.FC = () => {
   return (
     <section
       id="achievements"
-      className="py-20 md:py-28 bg-gradient-to-t from-white to-blue-50 text-center relative overflow-hidden"
+      className="py-20 md:py-28 bg-white text-center relative overflow-hidden"
     >
       {/* Soft radial background accent */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.1)_0%,transparent_70%)]"></div>
+      <div className="absolute inset-0 bg-black/5"></div>
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         <motion.h2
@@ -67,10 +67,10 @@ const Achievements: React.FC = () => {
 
               {/* Pulsing glow animation on hover */}
               <div className="absolute inset-0 rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-700 pointer-events-none">
-                <div className="absolute inset-0 animate-pulse bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.15)_0%,transparent_70%)] rounded-2xl"></div>
+                <div className="absolute inset-0 animate-pulse bg-black/10 rounded-2xl"></div>
               </div>
 
-              <h3 className="text-3xl md:text-5xl font-extrabold text-blue-600 mb-2 relative z-10">
+              <h3 className="text-2xl md:text-5xl font-extrabold text-black mb-2 relative z-10 animate-bounce-subtle">
                 {item.value}
               </h3>
               <p className="text-base md:text-lg font-semibold text-gray-900 relative z-10">

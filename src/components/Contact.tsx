@@ -6,7 +6,7 @@ const Contact: React.FC = () => {
   return (
     <section
       id="contact"
-      className="py-20 md:py-28 relative z-10 bg-gradient-to-b from-white to-blue-100"
+      className="py-20 md:py-28 relative z-10 bg-white"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Text colors adjusted for contrast against the light gradient */}
@@ -27,7 +27,7 @@ const Contact: React.FC = () => {
 
         <a
           href="mailto:inquire@granvilletechnologies.com"
-          className="inline-flex items-center justify-center px-10 py-4 text-base md:text-lg font-bold rounded-full text-white bg-blue-600 hover:bg-blue-700 shadow-[inset_0_2px_4px_rgba(255,255,255,0.45),_inset_0_-3px_6px_rgba(0,0,0,0.25)] transition-all duration-500 ease-in-out transform hover:scale-[1.05] hover:shadow-[inset_0_3px_6px_rgba(255,255,255,0.6),_inset_0_-4px_8px_rgba(0,0,0,0.3)]"
+          className="inline-flex items-center justify-center px-10 py-4 text-base md:text-lg font-bold rounded-full text-white bg-black hover:bg-gray-800 shadow-[inset_0_2px_4px_rgba(255,255,255,0.45),_inset_0_-3px_6px_rgba(0,0,0,0.25)] transition-all duration-500 ease-in-out transform hover:scale-[1.05] hover:shadow-[inset_0_3px_6px_rgba(255,255,255,0.6),_inset_0_-4px_8px_rgba(0,0,0,0.3)] animate-pulse-subtle"
         >
           Book Your Free Consultation Now
         </a>

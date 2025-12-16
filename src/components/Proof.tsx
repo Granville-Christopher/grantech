@@ -6,7 +6,7 @@ const Proof: React.FC = () => {
   return (
     <section
       id="proof"
-      className="py-20 md:py-28 bg-gradient-to-b from-white to-gray-50"
+      className="py-20 md:py-28 bg-white"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row justify-between items-start">
         {/* Left Content Area */}
@@ -24,7 +24,7 @@ const Proof: React.FC = () => {
           <div className="text-center lg:text-left">
             <a
               href="#contact"
-              className="inline-flex items-center justify-center px-8 py-3 text-base font-bold rounded-full text-white bg-blue-500 hover:bg-blue-600 shadow-[inset_0_2px_4px_rgba(255,255,255,0.5),_inset_0_-2px_4px_rgba(0,0,0,0.15)] transition-all duration-500 ease-in-out transform hover:scale-[1.05] hover:shadow-[inset_0_3px_6px_rgba(255,255,255,0.6),_inset_0_-3px_6px_rgba(0,0,0,0.25)]"
+              className="inline-flex items-center justify-center px-8 py-3 text-base font-bold rounded-full text-white bg-black hover:bg-gray-800 shadow-[inset_0_2px_4px_rgba(255,255,255,0.5),_inset_0_-2px_4px_rgba(0,0,0,0.15)] transition-all duration-500 ease-in-out transform hover:scale-[1.05] hover:shadow-[inset_0_3px_6px_rgba(255,255,255,0.6),_inset_0_-3px_6px_rgba(0,0,0,0.25)]"
             >
               Discuss Your Project
               <span></span>

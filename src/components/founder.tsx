@@ -8,7 +8,7 @@ const fadeInUp: Variants = {
 
 const FounderSection: React.FC = () => {
   return (
-    <section className="py-20 bg-gradient-to-b from-blue-100 via-white to-blue-100 text-center overflow-hidden">
+    <section className="py-20 bg-white text-center overflow-hidden">
       <div className="max-w-5xl mx-auto px-6">
         {/* 🌟 Animated Title with reflective glow */}
         <motion.h2
@@ -19,7 +19,7 @@ const FounderSection: React.FC = () => {
           className="relative text-2xl md:text-4xl font-extrabold mb-8 text-gray-800 inline-block"
         >
           <span className="relative z-10">Meet the Founder</span>
-          <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/60 to-transparent animate-[shine_4s_linear_infinite]" />
+          <span className="absolute inset-0 bg-black/10 animate-[shine_4s_linear_infinite]" />
         </motion.h2>
 
         {/* Founder Section */}
@@ -44,7 +44,7 @@ const FounderSection: React.FC = () => {
               alt="Founder of Granville Technologies"
               className="w-full h-full object-cover opacity-95"
             />
-            <span className="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-transparent opacity-40"></span>
+            <span className="absolute inset-0 bg-black/10 opacity-20"></span>
           </motion.div>
 
           {/* Founder Info */}
@@ -52,7 +52,7 @@ const FounderSection: React.FC = () => {
             <h3 className="text-2xl font-semibold text-gray-800">
               Granville B. Christopher
             </h3>
-            <p className="text-blue-600 font-medium mb-3">
+            <p className="text-black font-medium mb-3">
               Founder & Lead Developer, Granville Technologies (GranTech)
             </p>
             <p className="text-gray-600 leading-relaxed">
@@ -125,7 +125,7 @@ const FounderSection: React.FC = () => {
                 <h4 className="text-lg font-semibold text-gray-800">
                   {member.name}
                 </h4>
-                <p className="text-blue-600 text-sm font-medium">
+                <p className="text-black text-sm font-medium">
                   {member.role}
                 </p>
               </motion.div>

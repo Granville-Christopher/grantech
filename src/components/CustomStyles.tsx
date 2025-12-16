@@ -48,10 +48,37 @@ const CustomStyles: React.FC = () => (
 
       /* Blueprint Grid Background */
       .blueprint-bg {
-          background-color: #f7fbff; /* Blue-50 equivalent */
-          background-image: linear-gradient(to right, #e0f2ff 1px, transparent 1px),
-                            linear-gradient(to bottom, #e0f2ff 1px, transparent 1px);
+          background-color: white; /* White background */
+          background-image: linear-gradient(to right, black 1px, transparent 1px),
+                            linear-gradient(to bottom, black 1px, transparent 1px);
           background-size: 20px 20px; /* Size of each square in the grid */
+      }
+      
+      /* Slow spin animation */
+      @keyframes spin-slow {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      .animate-spin-slow {
+        animation: spin-slow 8s linear infinite;
+      }
+      
+      /* Subtle pulse animation */
+      @keyframes pulse-subtle {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.8; }
+      }
+      .animate-pulse-subtle {
+        animation: pulse-subtle 2s ease-in-out infinite;
+      }
+      
+      /* Subtle bounce animation */
+      @keyframes bounce-subtle {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-3px); }
+      }
+      .animate-bounce-subtle {
+        animation: bounce-subtle 2s ease-in-out infinite;
       }
 
       /* Horizontal Ticker Animation */
@@ -74,7 +101,7 @@ const CustomStyles: React.FC = () => (
         display: flex;
         align-items: center;
         padding: 0.5rem 0;               /* vertical breathing room */
-        background: rgba(239, 246, 255, 0.15); /* faint blue-ish band (optional) */
+        background: rgba(139, 69, 19, 0.1); /* faint brown band (optional) */
         border-radius: 9999px;
       }
       
@@ -106,12 +133,12 @@ const CustomStyles: React.FC = () => (
         margin-right: 2.5rem;            /* spacing between items */
         font-weight: 700;
         font-size: 0.95rem;
-        color: #1e40af;                  /* blue-800 (tailwind-ish) */
+        color: black;                  /* black */
         text-transform: uppercase;
         letter-spacing: 0.06em;
         padding: 0.25rem 0.4rem;
         border-radius: 0.5rem;
-        background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0));
+        background: rgba(255,255,255,0.1);
       }
       
       /* responsive: slower on small screens if you want even more readable */

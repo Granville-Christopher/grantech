@@ -11,13 +11,13 @@ const ZProcessStep: React.FC<ProcessStep> = ({ id, title, description }) => {
       }`}
     >
       {/* Step Number */}
-      <div className="absolute left-1/2 -translate-x-1/2 top-3 md:top-8 w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full bg-blue-600 text-white font-extrabold text-sm md:text-lg shadow-xl z-20">
+      <div className="absolute left-1/2 -translate-x-1/2 top-3 md:top-8 w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full bg-black text-white font-extrabold text-sm md:text-lg shadow-xl z-20 animate-pulse-subtle">
         {id}
       </div>
 
       {/* Card */}
       <div
-        className={`relative w-[92%] sm:w-[85%] md:w-5/12 bg-white shadow-xl rounded-lg border-t-4 border-blue-400 px-5 py-6 md:py-8 transition-all duration-300 ease-in-out hover:shadow-blue-200 hover:scale-[1.02] z-10
+        className={`relative w-[92%] sm:w-[85%] md:w-5/12 bg-white shadow-xl rounded-lg border-t-4 border-black px-5 py-6 md:py-8 transition-all duration-300 ease-in-out hover:shadow-black/20 hover:scale-[1.02] z-10
     ${
       isEven
         ? "md:self-end text-left md:text-right ml-6 sm:ml-10 md:ml-0"

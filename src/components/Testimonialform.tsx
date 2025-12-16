@@ -17,13 +17,13 @@ const TestimonialsSection: React.FC = () => {
   return (
     <section
       id="testimonials"
-      className="relative py-20 px-6 md:px-16 bg-gradient-to-b from-blue-50/40 to-blue-100/30 backdrop-blur-md"
+      className="relative py-20 px-6 md:px-16 bg-white backdrop-blur-md"
     >
      
 
         {/* --- Testimonial Submission Form --- */}
         <div className="p-8 md:p-10 rounded-3xl bg-white/70 backdrop-blur-xl shadow-[inset_0_3px_6px_rgba(255,255,255,0.6),_inset_0_-3px_8px_rgba(0,0,0,0.2)] max-w-3xl mx-auto">
-          <h3 className="text-2xl font-semibold text-blue-800 mb-6">
+          <h3 className="text-2xl font-semibold text-black mb-6">
             Share Your Experience
           </h3>
           <form onSubmit={handleSubmit} className="space-y-6">
@@ -38,7 +38,7 @@ const TestimonialsSection: React.FC = () => {
                 id="testimonial"
                 rows={4}
                 placeholder="Tell us about your experience..."
-                className="w-full rounded-xl bg-white/60 border border-blue-100 text-gray-800 p-4 focus:outline-none focus:ring-1 focus:ring-gray-400 resize-none"
+                className="w-full rounded-xl bg-white/80 border border-black/30 text-gray-800 p-4 focus:outline-none focus:ring-1 focus:ring-black resize-none"
                 required
               />
             </div>
@@ -55,7 +55,7 @@ const TestimonialsSection: React.FC = () => {
                   id="name"
                   type="text"
                   placeholder="John Doe"
-                  className="w-full rounded-xl bg-white/60 border border-blue-100 text-gray-800 p-4 focus:outline-none focus:ring-1 focus:ring-gray-400"
+                  className="w-full rounded-xl bg-white/80 border border-black/30 text-gray-800 p-4 focus:outline-none focus:ring-1 focus:ring-black"
                   required
                 />
               </div>
@@ -71,14 +71,14 @@ const TestimonialsSection: React.FC = () => {
                   id="role"
                   type="text"
                   placeholder="Software Engineer, Nova Systems"
-                  className="w-full rounded-xl bg-white/60 border border-blue-100 text-gray-800 p-4 focus:outline-none focus:ring-1 focus:ring-gray-400"
+                  className="w-full rounded-xl bg-white/80 border border-black/30 text-gray-800 p-4 focus:outline-none focus:ring-1 focus:ring-black"
                 />
               </div>
             </div>
 
             <button
               type="submit"
-              className="mt-6 inline-flex items-center justify-center px-10 py-2 text-base font-bold rounded-full text-white bg-blue-500 hover:bg-blue-600 shadow-[inset_0_2px_4px_rgba(255,255,255,0.45),_inset_0_-3px_6px_rgba(0,0,0,0.25)] transition-all duration-500 transform hover:scale-[1.05]"
+              className="mt-6 inline-flex items-center justify-center px-10 py-2 text-base font-bold rounded-full text-white bg-black hover:bg-gray-800 shadow-[inset_0_2px_4px_rgba(255,255,255,0.45),_inset_0_-3px_6px_rgba(0,0,0,0.25)] transition-all duration-500 transform hover:scale-[1.05]"
             >
               Submit Testimonial
             </button>

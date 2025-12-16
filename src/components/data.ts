@@ -1,7 +1,9 @@
+import type React from "react";
+
 // --- TypeScript Interfaces ---
 export interface Service {
   id: number;
-  icon: string | React.ReactNode;
+  icon: string;
   title: string;
   description: string;
 }
@@ -197,12 +199,12 @@ export const testimonials: Testimonial[] = [
   },
 ];
 export const techStack: TechStack[] = [
-  { id: 1, name: "TypeScript/React", icon: "⚛️" },
-  { id: 2, name: "Node.js/Go", icon: "🚀" },
-  { id: 3, name: "AWS/GCP Cloud", icon: "☁️" },
-  { id: 4, name: "Tailwind CSS", icon: "💅" },
-  { id: 5, name: "Next.js/Serverless", icon: "⚡" },
-  { id: 6, name: "DevSecOps", icon: "🛡️" },
+  { id: 1, name: "TypeScript/React", icon: "typescript-react" },
+  { id: 2, name: "Node.js/Go", icon: "nodejs-go" },
+  { id: 3, name: "AWS/GCP Cloud", icon: "aws-gcp" },
+  { id: 4, name: "Tailwind CSS", icon: "tailwind" },
+  { id: 5, name: "Next.js/Serverless", icon: "nextjs" },
+  { id: 6, name: "DevSecOps", icon: "shield" },
 ];
 export const engagementModels: EngagementModel[] = [
   {

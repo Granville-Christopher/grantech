@@ -74,18 +74,18 @@ const HappyNewMonth: React.FC = () => {
                        shadow-[0_8px_32px_rgba(255,255,255,0.2)] p-8 overflow-hidden"
           >
             {/* Slanted Ribbon */}
-            <div className="absolute top-9 right-[-33px] bg-gradient-to-r from-red-500 to-pink-500 text-white text-xs font-semibold px-6 py-1 shadow-lg rotate-45">
+            <div className="absolute top-9 right-[-33px] bg-black text-white text-xs font-semibold px-6 py-1 shadow-lg rotate-45">
               🎀 Happy November!
             </div>
 
             {/* Title */}
-            <h1 className="text-2xl mt-8 md:text-4xl font-extrabold text-blue-900 mb-3">
+            <h1 className="text-2xl mt-8 md:text-4xl font-extrabold text-black mb-3">
               Happy New Month! <br />
               🎊
             </h1>
 
             {/* Subtext */}
-            <p className="text-blue-700 font-medium mb-6">
+            <p className="text-black/80 font-medium mb-6">
               GranTech is wishing you a month filled with{" "}
               <span className="font-semibold">growth, creativity,</span> and
               amazing breakthroughs.
@@ -95,19 +95,19 @@ const HappyNewMonth: React.FC = () => {
             <motion.div
               animate={{ y: [0, -10, 0] }}
               transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-              className="w-24 h-24 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-inner border border-white/40"
+              className="w-24 h-24 bg-black rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-inner border border-black/20"
             >
               <span className="text-5xl">🎁</span>
             </motion.div>
 
-            <p className="text-blue-900 text-base md:text-lg font-medium mb-4">
+            <p className="text-black text-base md:text-lg font-medium mb-4">
               Let’s keep pushing limits and building the future together.
             </p>
 
-            <p className="text-blue-700 text-sm">
+            <p className="text-black/80 text-sm">
               With ❤️ from{" "}
               <b
-                className="font-semibold text-blue-900 cursor-pointer"
+                className="font-semibold text-black cursor-pointer"
               >
                 Granville Technologies (GranTech)
               </b>

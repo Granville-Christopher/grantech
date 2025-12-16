@@ -33,7 +33,7 @@ const DiagonalIconTrain: React.FC<{
         {icons.map((icon, index) => (
           <div
             key={index}
-            className="text-5xl md:text-6xl text-blue-500 p-3 rounded-xl bg-white/50 shadow-2xl transform skew-y-[-10deg] opacity-20"
+            className="text-5xl md:text-6xl text-black p-3 rounded-xl bg-white/50 shadow-2xl transform skew-y-[-10deg] opacity-20"
             style={{
               marginLeft: `${(index % 4) * 20}px`,
               opacity: index % 5 === 0 ? 0.2 : 0.2,
