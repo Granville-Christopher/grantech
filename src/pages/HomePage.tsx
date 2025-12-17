@@ -14,7 +14,6 @@ import Process from "../components/Process";
 import Contact from "../components/Contact";
 import FAQ from "../components/FAQ";
 import Footer from "../components/Footer";
-import FounderSection from "../components/founder";
 
 const HomePage: React.FC = () => {
   return (
@@ -36,7 +35,6 @@ const HomePage: React.FC = () => {
         <Process />
         <Contact />
         <FAQ />
-        <FounderSection />
         {/* <HappyNewMonth /> */}
       </main>
 
