@@ -29,19 +29,35 @@ const Header: React.FC = () => {
         <div
           className={`flex items-center transition-all duration-700 ease-in-out ${
             isScrolled
-              ? "scale-[1] md:scale-[0.95] opacity-95"
-              : "scale-[1.25] md:scale-[1.25] opacity-100"
+              ? "scale-[1] opacity-95"
+              : "scale-[1.05] opacity-100"
           }`}
         >
           <a
             href="#home"
-            className="no-underline font-bold text-black hover:text-gray-600 transition-colors duration-300"
+            className="no-underline font-bold text-black hover:text-gray-600 transition-colors duration-300 flex items-center gap-2 group"
           >
-            <img
-              src="/Gemini_Generated_Image_v1vh0ev1vh0ev1vh-removebg-preview.png"
-              alt="Logo"
-              className="w-28 md:w-40 transition-all duration-700 ease-in-out"
-            />
+            {/* Professional Code-Inspired Logo */}
+            <div className="flex items-center gap-2.5">
+              {/* Code Bracket Icon */}
+              <div className="relative flex items-center justify-center">
+                <div className="text-sm md:text-base font-mono font-bold leading-none">
+                  <span className="text-black/40 group-hover:text-black transition-colors duration-300">&lt;</span>
+                  <span className="text-black font-extrabold">GT</span>
+                  <span className="text-black/40 group-hover:text-black transition-colors duration-300">/&gt;</span>
+                </div>
+              </div>
+              
+              {/* Text Logo */}
+              <div className="flex flex-col border-l-2 border-black/20 pl-2.5 md:pl-3">
+                <span className="text-lg md:text-xl font-extrabold tracking-tight leading-none">
+                  GranTech
+                </span>
+                <span className="text-[8px] md:text-[9px] font-medium text-black/50 uppercase tracking-widest leading-none mt-0.5">
+                  IT Solutions
+                </span>
+              </div>
+            </div>
           </a>
         </div>
 
