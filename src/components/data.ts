@@ -42,7 +42,7 @@ export interface EngagementModel {
 }
 
 // --- Data Content ---
-export const MISSION_STATEMENT = "Strategic. Scalable. Secure.";
+export const MISSION_STATEMENT = "Trusted by Companies Worldwide";
 export const services: Service[] = [
   {
     id: 1,
