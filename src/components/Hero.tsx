@@ -128,7 +128,7 @@ const Hero: React.FC = () => {
         </div>
 
         {/* Stats Cards at Bottom - Glassmorphism with Staggered Animation */}
-        <div className="absolute bottom-[-200px] right-0 w-full max-w-xs z-50">
+        <div className="absolute bottom-[-150px] right-0 w-full max-w-xs z-50">
           <div className="relative h-24 flex items-end justify-end">
             {stats.map((stat, index) => {
               const isActive = activeCard === index;
@@ -146,7 +146,7 @@ const Hero: React.FC = () => {
                   }`}
                 >
                   <div className="text-right">
-                    <div className="text-2xl md:text-3xl font-black text-black">{stat.value}</div>
+                    <div className="text-xl md:text-2xl font-black text-black">{stat.value}</div>
                     <div className="text-xs font-semibold text-black/80 uppercase tracking-wider">{stat.label}</div>
                   </div>
                 </div>
