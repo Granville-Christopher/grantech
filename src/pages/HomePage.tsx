@@ -14,6 +14,7 @@ import Process from "../components/Process";
 import Contact from "../components/Contact";
 import FAQ from "../components/FAQ";
 import Footer from "../components/Footer";
+import ChristmasFlier from "../components/newemonthflier/ChristmasFlier";
 
 const HomePage: React.FC = () => {
   return (
@@ -35,7 +36,7 @@ const HomePage: React.FC = () => {
         <Process />
         <Contact />
         <FAQ />
-        {/* <HappyNewMonth /> */}
+        <ChristmasFlier />
       </main>
 
       <Footer />
