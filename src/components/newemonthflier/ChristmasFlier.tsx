@@ -58,7 +58,7 @@ const ChristmasFlier: React.FC = () => {
           {/* Close Button */}
           <motion.button
             onClick={() => setShow(false)}
-            className="absolute top-5 right-5 text-white/70 hover:text-white hover:scale-110 transition-all z-50"
+            className="absolute top-5 right-5 text-white/70 hover:text-white bg-transparent hover:scale-110 transition-all z-50"
             whileHover={{ rotate: 180, scale: 1.2 }}
             whileTap={{ scale: 0.9 }}
           >
