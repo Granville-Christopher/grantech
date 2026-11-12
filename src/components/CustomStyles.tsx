@@ -101,7 +101,7 @@ const CustomStyles: React.FC = () => (
         display: flex;
         align-items: center;
         padding: 0.5rem 0;               /* vertical breathing room */
-        background: rgba(139, 69, 19, 0.1); /* faint brown band (optional) */
+        background: transparent;
         border-radius: 9999px;
       }
       
@@ -133,12 +133,12 @@ const CustomStyles: React.FC = () => (
         margin-right: 2.5rem;            /* spacing between items */
         font-weight: 700;
         font-size: 0.95rem;
-        color: black;                  /* black */
+        color: #00c8ff;
         text-transform: uppercase;
         letter-spacing: 0.06em;
         padding: 0.25rem 0.4rem;
         border-radius: 0.5rem;
-        background: rgba(255,255,255,0.1);
+        background: rgba(0, 200, 255, 0.08);
       }
       
       /* responsive: slower on small screens if you want even more readable */

@@ -25,7 +25,24 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ["Inter", "Manrope", "system-ui", "sans-serif"],
+      },
+      colors: {
+        navy: "#06142f",
+        primary: "#153b70",
+        electric: "#006bff",
+        cyan: "#00c8ff",
+        mist: "#f4f7fb",
+      },
+      boxShadow: {
+        glow: "0 10px 40px rgba(0, 107, 255, 0.35)",
+      },
+      opacity: {
+        15: "0.15",
+      },
+    },
   },
   plugins: [],
 };

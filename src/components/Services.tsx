@@ -4,35 +4,17 @@ import { services } from "./data";
 
 const Services: React.FC = () => {
   return (
-    <section
-      id="services"
-      className="py-24 md:py-32 bg-white relative z-10 section-fold-top -mt-20 md:-mt-24 pt-32 md:pt-40"
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header Section */}
-        <div className="text-center mb-16 md:mb-20">
-          <div className="inline-block mb-4">
-            <span className="text-xs md:text-sm font-semibold text-black/60 uppercase tracking-wider">
-              Our Services
-            </span>
-          </div>
-          <h2 className="text-2xl md:text-5xl font-extrabold mb-6 text-black">
-            Full-Spectrum Digital Solutions
-          </h2>
-          <p className="text-base md:text-lg text-black/70 max-w-3xl mx-auto leading-relaxed">
-            Our service model covers the entire product lifecycle, from
-            initial strategy to ongoing maintenance and optimization.
+    <section id="services" className="bg-[#f4f5f7] px-3 pb-6 md:px-4">
+      <div className="rounded-[2rem] bg-navy px-6 py-20 text-white md:px-10 md:py-24">
+        <div className="mx-auto max-w-2xl text-center">
+          <h2 className="text-4xl font-semibold tracking-tight md:text-5xl">Services</h2>
+          <p className="mt-4 text-base leading-relaxed text-white/60">
+            Strategy, product, and engineering for companies where quality is not optional.
           </p>
         </div>
-
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {services.map((service, index) => (
-            <ServiceSectionCard
-              key={service.id}
-              {...service}
-              delay={index + 1}
-            />
+        <div className="mx-auto mt-14 grid max-w-6xl gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {services.map((service) => (
+            <ServiceSectionCard key={service.id} {...service} delay={0} />
           ))}
         </div>
       </div>

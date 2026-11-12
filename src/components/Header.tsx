@@ -1,114 +1,104 @@
-import React, { useState, useEffect } from "react";
-import { FaPhoneAlt } from "react-icons/fa";
+import React, { useEffect, useState } from "react";
+import { Menu, X } from "lucide-react";
+import Logo from "./Logo";
+import ProjectLink from "./ProjectLink";
+
+const links = [
+  ["Services", "#services"],
+  ["Why Us", "#why-us"],
+  ["Work", "#proof"],
+  ["Process", "#process"],
+  ["Contact", "#contact"],
+];
 
 const Header: React.FC = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  // Apple Liquid Glass header
-  const headerClasses = isScrolled
-    ? "bg-white/80 backdrop-blur-[10px] shadow-[inset_0_1px_2px_rgba(255,255,255,0.2),_inset_0_-1px_3px_rgba(0,0,0,0.3),_0_4px_12px_rgba(0,0,0,0.3)] py-2"
-    : "bg-transparent backdrop-blur-[2px] py-4";
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
 
   return (
-    <div className="fixed top-0 left-0 w-full z-40 transition-all duration-700 ease-in-out">
-      <header
-        className={`relative max-w-7xl md:mx-auto my-2 mx-4 md:m-3 px-4 sm:px-6 lg:px-8 flex justify-between items-center rounded-full overflow-hidden transition-all duration-700 ease-in-out ${headerClasses}`}
+    <div className="fixed inset-x-0 top-0 z-50">
+      <a
+        href="#contact"
+        className="group flex items-center justify-center gap-1.5 bg-navy px-4 py-2 text-center text-[12px] font-medium text-white"
       >
-        {/* ✨ Glass reflection overlay */}
-        {isScrolled && (
-          <div className="absolute inset-0 bg-black/10 pointer-events-none" />
-        )}
-
-        {/* 🔹 Logo */}
-        <div
-          className={`flex items-center transition-all duration-700 ease-in-out ${
-            isScrolled
-              ? "scale-[1] opacity-95"
-              : "scale-[1.05] opacity-100"
-          }`}
+        Now booking new projects
+        <svg
+          viewBox="0 0 18 18"
+          className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-[3px]"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.25"
+          aria-hidden="true"
         >
-          <a
-            href="#home"
-            className="no-underline font-bold text-black hover:text-gray-600 transition-colors duration-300 flex items-center gap-2 group"
-          >
-            {/* Professional Code-Inspired Logo */}
-            <div className="flex items-center gap-2.5">
-              {/* Code Bracket Icon */}
-              <div className="relative flex items-center justify-center">
-                <div className="text-sm md:text-base font-mono font-bold leading-none">
-                  <span className="text-black/40 group-hover:text-black transition-colors duration-300">&lt;</span>
-                  <span className="text-black font-extrabold">GT</span>
-                  <span className="text-black/40 group-hover:text-black transition-colors duration-300">/&gt;</span>
-                </div>
-              </div>
-              
-              {/* Text Logo */}
-              <div className="flex flex-col border-l-2 border-black/20 pl-2.5 md:pl-3">
-                <span className="text-lg md:text-xl font-extrabold tracking-tight leading-none">
-                  GranTech
-                </span>
-                <span className="text-[8px] md:text-[9px] font-medium text-black/50 uppercase tracking-widest leading-none mt-0.5">
-                  IT Solutions
-                </span>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        {/* 🔹 Right Side: Nav Links + CTA Button */}
-        <div className="flex items-center gap-4 md:gap-6">
-          {/* 🔹 Mobile "Call Us" button (Liquid Glass Blue Style) */}
-          <a
-            href="tel:+2347051962741"
-            className="inline-flex md:hidden relative overflow-hidden px-5 py-2 text-sm font-semibold rounded-full backdrop-blur-lg bg-black text-white hover:bg-[#1a1a1a] shadow-[inset_0_1px_2px_rgba(255,255,255,0.5),_0_4px_12px_rgba(0,0,0,0.2)] transition-all duration-500 transform hover:scale-95 hover:shadow-[inset_0_1px_3px_rgba(255,255,255,0.7),_0_6px_18px_rgba(0,0,0,0.25)]"
-          >
-            <div className=" flex items-center text-white space-x-2">
-              <FaPhoneAlt className="mr-2 relative z-10 " />
-              <span className="relative z-10 ">
-                Call Us
-              </span>
-            </div>
+          <path d="M3.75 9h9M9 14.25 14.25 9 9 3.75" />
+        </svg>
+      </a>
+      <header className="border-b border-navy/10 bg-[#f4f5f7]/90 backdrop-blur-md">
+        <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
+          <a href="#home" className="text-navy" aria-label="GranTech home">
+            <Logo />
           </a>
 
-          {/* 🔹 Nav Links */}
-          <nav className="hidden md:flex space-x-6 relative z-10">
-            {[
-              "Services",
-              "Tech Stack",
-              "Why Us",
-              "Proof",
-              "Process",
-              "Contact",
-            ].map((item) => (
+          <nav className="hidden items-center gap-7 md:flex">
+            {links.map(([label, href]) => (
               <a
-                key={item}
-                href={`#${item.toLowerCase().replace(" ", "-")}`}
-                className="group relative text-black font-medium px-3 py-2 rounded-xl transition-all duration-500 ease-out transform hover:scale-95"
+                key={label}
+                href={href}
+                className="text-[13px] font-medium text-navy/55 transition-colors duration-500 hover:text-navy"
               >
-                <span className="relative z-10 transition-colors duration-500 group-hover:text-gray-600">
-                  {item}
-                </span>
-
-                {/* 🍏 Apple Glass Hover */}
-                <span className="absolute inset-0 rounded-xl backdrop-blur-[4px] bg-white/35 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out transform group-hover:scale-[1.05] shadow-[inset_0_1px_2px_rgba(255,255,255,0.6),_inset_0_-1px_3px_rgba(0,0,0,0.05),_0_4px_12px_rgba(255,255,255,0.2)]"></span>
+                {label}
               </a>
             ))}
           </nav>
 
-          {/* 🔹 CTA Button (Liquid Blue Glass) */}
-          <a
-            href="#contact"
-            className="hidden md:inline-flex relative overflow-hidden px-6 py-2 text-sm font-sans rounded-full text-white backdrop-blur-lg bg-black border border-white/20 shadow-[inset_0_2px_4px_rgba(255,255,255,0.4),_inset_0_-2px_4px_rgba(0,0,0,0.15)] transition-all duration-500 ease-in-out transform hover:scale-95 hover:bg-[#1a1a1a] hover:shadow-[inset_0_3px_5px_rgba(255,255,255,0.5),_inset_0_-3px_6px_rgba(0,0,0,0.2)]"
-          >
-            <span className="relative z-10 text-white">Get Quote</span>
-          </a>
+          <div className="flex items-center gap-2">
+            <a
+              href="#proof"
+              className="hidden rounded-full px-4 py-2 text-[13px] font-medium text-navy/55 transition-colors duration-500 hover:text-navy md:inline-flex"
+            >
+              See the work
+            </a>
+            <ProjectLink
+              href="#contact"
+              className="hidden bg-navy px-4 py-2 text-[13px] font-semibold text-white hover:bg-primary md:inline-flex"
+            />
+            <button
+              type="button"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-navy/15 text-navy md:hidden"
+              onClick={() => setOpen((value) => !value)}
+              aria-label={open ? "Close menu" : "Open menu"}
+            >
+              {open ? <X size={18} /> : <Menu size={18} />}
+            </button>
+          </div>
         </div>
+        {open && (
+          <div className="border-t border-navy/10 bg-[#f4f5f7] px-6 py-4 md:hidden">
+            {links.map(([label, href]) => (
+              <a
+                key={label}
+                href={href}
+                onClick={() => setOpen(false)}
+                className="block border-b border-navy/10 py-3 text-base text-navy"
+              >
+                {label}
+              </a>
+            ))}
+            <a
+              href="#contact"
+              onClick={() => setOpen(false)}
+              className="mt-4 inline-flex w-full justify-center rounded-full bg-navy px-4 py-3 text-sm font-semibold text-white"
+            >
+              Start a project
+            </a>
+          </div>
+        )}
       </header>
     </div>
   );

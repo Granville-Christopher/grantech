@@ -11,7 +11,7 @@ const HorizontalTicker: React.FC = () => {
   ));
 
   return (
-    <section className="py-3 md:py-5 bg-white border-y border-black backdrop-blur-sm">
+    <section className="py-3 md:py-5 bg-navy border-y border-cyan/30">
       <div className="ticker-wrapper">
         <div className="ticker-animation">{content}</div>
       </div>

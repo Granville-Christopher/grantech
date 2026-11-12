@@ -5,17 +5,14 @@ const ModelCard: React.FC<EngagementModel & { delay: number }> = ({
   title,
   description,
   priceAnchor,
-  delay,
 }) => (
-  <div
-    className={`p-8 rounded-xl bg-black shadow-2xl flex flex-col items-start h-full transition-all duration-300 ease-in-out hover:bg-gray-800 hover:scale-[1.05] border-t-2 border-black animate-slide-in animate-delay-${delay} hover:rotate-1`}
-  >
-    <h3 className="text-xl md:text-2xl font-extrabold text-white mb-3">{title}</h3>
-    <p className="text-white/90 mb-4 flex-grow text-sm">{description}</p>
-    <p className="font-bold text-white text-base md:text-lg border-t pt-3 w-full border-white/30">
+  <article className="flex h-full flex-col rounded-2xl border border-white/10 bg-white/[0.03] p-7">
+    <h3 className="text-xl font-semibold tracking-tight text-white">{title}</h3>
+    <p className="mt-3 flex-1 text-sm leading-relaxed text-white/65">{description}</p>
+    <p className="mt-6 border-t border-white/10 pt-4 text-sm font-semibold text-cyan">
       {priceAnchor}
     </p>
-  </div>
+  </article>
 );
 
 export default ModelCard;

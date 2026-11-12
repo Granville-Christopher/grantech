@@ -1,162 +1,60 @@
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { FaChevronDown } from "react-icons/fa";
 
-interface FAQItem {
-  id: number;
-  question: string;
-  answer: string;
-}
-
-const faqData: FAQItem[] = [
+const faqData = [
   {
-    id: 1,
     question: "How long does a project take?",
     answer:
-      "Project timelines vary based on scope and complexity. A typical MVP takes 4-8 weeks, while enterprise solutions can range from 3-6 months. We provide detailed timelines during our initial consultation and maintain transparent communication throughout the development process. We'll work with you to establish realistic milestones and keep you updated at every stage.",
+      "A typical MVP takes 4–8 weeks. Enterprise work usually runs 3–6 months. You get a timeline in the first conversation, then updates at every milestone.",
   },
   {
-    id: 2,
     question: "Do you provide post-launch support?",
     answer:
-      "Yes, absolutely! We offer comprehensive post-launch support packages including bug fixes, performance monitoring, security updates, and feature enhancements. Our support plans are flexible and can be tailored to your needs—from basic maintenance to 24/7 monitoring and rapid response. We're committed to ensuring your platform continues to perform optimally long after launch.",
+      "Yes. Support can cover fixes, monitoring, security updates, and new features, from a light retainer to round-the-clock response.",
   },
   {
-    id: 3,
     question: "How can I get started?",
     answer:
-      "Getting started is simple! Reach out to us through our contact form or email us directly. We'll schedule a free consultation to discuss your project requirements, goals, and timeline. During this call, we'll provide initial recommendations and a transparent quote. Once you're ready, we'll create a detailed project blueprint and kick off development. No commitment required for the initial consultation.",
+      "Email us. The first conversation covers goals, scope, and a clear quote. Nothing is committed until you want to proceed.",
   },
   {
-    id: 4,
     question: "What technologies do you specialize in?",
     answer:
-      "We specialize in modern, secure technologies including TypeScript/React for frontend development, Node.js and Go for backend services, AWS and GCP for cloud infrastructure, and Next.js for serverless applications. Our team is also expert in Tailwind CSS for responsive design and DevSecOps practices for security-first development. We stay current with industry best practices and emerging technologies to deliver cutting-edge solutions.",
+      "TypeScript and React, Node.js and Go, AWS and GCP, and Next.js when a serverless app is the right fit. Security is part of the build.",
   },
 ];
 
 const FAQ: React.FC = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-  const toggleQuestion = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section
-      id="faq"
-      className="py-24 md:py-32 bg-white relative overflow-hidden"
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <div className="inline-block mb-4">
-            <span className="text-xs md:text-sm font-semibold text-black/60 uppercase tracking-wider">
-              FAQ
-            </span>
-          </div>
-          <h2 className="text-2xl md:text-5xl font-extrabold mb-6 text-black">
-            Got Questions? We Got Answers.
-          </h2>
-          <p className="text-base md:text-lg text-black/70 max-w-2xl mx-auto leading-relaxed">
-            Find answers to common questions about our services, process, and
-            support.
-          </p>
-        </div>
-
-        {/* FAQ Items */}
-        <div className="max-w-4xl mx-auto items-center justify-center">
-          <div className="space-y-4">
-            {faqData.map((item, index) => {
-              const isOpen = openIndex === index;
-
-              return (
-                <div
-                  key={item.id}
-                  className="border-2 border-gray-300 rounded-2xl overflow-hidden transition-all duration-300 hover:border-gray-400 hover:shadow-lg"
-                  style={{ backgroundColor: "#f9fafb !important" }}
-                >
-                  {/* Question */}
-                  <button
-                    onClick={() => toggleQuestion(index)}
-                    className="w-full px-6 md:px-8 py-5 md:py-6 flex justify-between items-center text-left group focus:outline-none focus:ring-0 focus:ring-offset-0 focus-visible:outline-none focus-visible:ring-0"
-                    style={{
-                      outline: "none",
-                      border: "none",
-                      backgroundColor: "transparent",
-                    }}
-                  >
-                    <h3 className="text-base md:text-lg font-bold text-black pr-4 group-hover:text-black/80 transition-colors">
-                      {item.question}
-                    </h3>
-                    <motion.div
-                      animate={{ rotate: isOpen ? 180 : 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="flex-shrink-0"
-                    >
-                      <FaChevronDown className="text-black/60 group-hover:text-black transition-colors" />
-                    </motion.div>
-                  </button>
-
-                  {/* Answer */}
-                  <AnimatePresence>
-                    {isOpen && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3, ease: "easeInOut" }}
-                        className="overflow-hidden"
-                      >
-                        <div className="px-6 md:px-8 pb-5 md:pb-6 pt-0">
-                          <div className="w-12 h-[2px] bg-black/20 mb-4"></div>
-                          <p className="text-sm md:text-base text-black/70 leading-relaxed">
-                            {item.answer}
-                          </p>
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* CTA */}
-        <div className="mt-12 text-center">
-          <p className="text-sm md:text-base text-black/70 mb-4">
-            Still have questions?
-          </p>
-          <a
-            href="#contact"
-            className="inline-flex items-center justify-center px-8 py-3 text-base font-bold rounded-full text-white bg-black hover:bg-[#1a1a1a] transition-all duration-500 ease-out transform hover:scale-105 shadow-lg hover:shadow-xl"
-          >
-            Contact Us
+    <section id="faq" className="bg-[#f4f5f7] px-6 py-20 md:py-24">
+      <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-12">
+        <div className="lg:col-span-4">
+          <h2 className="text-3xl font-semibold tracking-tight text-navy md:text-4xl">FAQs</h2>
+          <a href="#contact" className="mt-6 inline-flex text-sm font-semibold text-electric">
+            Ask something else
           </a>
         </div>
+        <div className="lg:col-span-8">
+          {faqData.map((item, index) => {
+            const isOpen = openIndex === index;
+            return (
+              <div key={item.question} className="border-t border-navy/10">
+                <button
+                  type="button"
+                  onClick={() => setOpenIndex(isOpen ? null : index)}
+                  className="flex w-full items-center justify-between bg-transparent py-5 text-left text-base font-semibold text-navy"
+                  aria-expanded={isOpen}
+                >
+                  {item.question}
+                  <span className="text-navy/40">{isOpen ? "–" : "+"}</span>
+                </button>
+                {isOpen && <p className="max-w-2xl pb-5 text-sm leading-relaxed text-navy/60">{item.answer}</p>}
+              </div>
+            );
+          })}
+        </div>
       </div>
-
-      {/* Remove all blue borders and ensure light gray background */}
-      <style>{`
-        #faq button:focus,
-        #faq button:focus-visible,
-        #faq button:active {
-          outline: none !important;
-          border: none !important;
-          box-shadow: none !important;
-        }
-        #faq button:hover {
-          outline: none !important;
-          border: none !important;
-        }
-        #faq > div > div > div {
-          background-color: #f9fafb !important;
-        }
-        #faq button {
-          background-color: transparent !important;
-        }
-      `}</style>
     </section>
   );
 };

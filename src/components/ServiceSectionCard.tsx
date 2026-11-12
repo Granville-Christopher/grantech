@@ -1,43 +1,47 @@
 import React from "react";
 import type { Service } from "./data";
+import ServiceArt from "./ServiceArt";
+
+const tags: Record<string, string[]> = {
+  "IT Consultancy & Strategy": ["Strategy", "Audits", "Roadmaps"],
+  "Web & App Development": ["Web apps", "Performance", "Security"],
+  "Design-First UX/UI": ["UX", "UI", "Accessibility"],
+  "Cybersecurity & Compliance": ["Assessments", "Compliance"],
+  "Data Strategy & AI Integration": ["Pipelines", "AI", "Analytics"],
+  "Cloud Operations & DevOps": ["CI/CD", "Cloud", "Monitoring"],
+};
 
 const ServiceSectionCard: React.FC<Service & { delay: number }> = ({
-  icon,
   title,
   description,
-  delay,
 }) => (
-  <div
-    className="group relative bg-white border-2 border-black/10 rounded-3xl p-6 md:p-8 transition-all duration-500 ease-out hover:border-black hover:shadow-[0_12px_40px_rgba(0,0,0,0.15)] hover:-translate-y-3"
-    style={{
-      animationDelay: `${delay * 0.1}s`,
-    }}
-  >
-    {/* Icon Section */}
-    <div className="mb-6">
-      <div className="inline-flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-black/5 border-2 border-black/10 group-hover:bg-black group-hover:border-black transition-all duration-500">
-        <span className="text-2xl md:text-3xl transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6">
-          {icon}
+  <article className="relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-[#0c1730] p-6 md:p-7">
+    <div
+      className="pointer-events-none absolute inset-0 opacity-50"
+      style={{
+        backgroundImage:
+          "linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px)",
+        backgroundSize: "32px 32px",
+        maskImage: "linear-gradient(to bottom, black 0%, transparent 62%)",
+        WebkitMaskImage: "linear-gradient(to bottom, black 0%, transparent 62%)",
+      }}
+    />
+    <h3 className="relative text-lg font-semibold tracking-tight text-white">{title}</h3>
+    <div className="relative mt-1 h-44">
+      <ServiceArt title={title} />
+    </div>
+    <p className="relative mt-2 flex-1 text-sm leading-relaxed text-white/60">{description}</p>
+    <div className="relative mt-6 flex flex-wrap gap-2">
+      {(tags[title] ?? []).map((tag) => (
+        <span
+          key={tag}
+          className="rounded-full border border-white/10 bg-white/[0.03] px-2.5 py-1 text-[10px] font-medium uppercase tracking-wide text-white/70"
+        >
+          {tag}
         </span>
-      </div>
+      ))}
     </div>
-
-    {/* Content Section */}
-    <div className="space-y-4">
-      <h3 className="text-lg md:text-xl font-bold text-black leading-tight">
-        {title}
-      </h3>
-      <div className="w-12 h-[2px] bg-black/20 group-hover:bg-black group-hover:w-16 transition-all duration-500"></div>
-      <p className="text-sm md:text-base text-black/70 leading-relaxed">
-        {description}
-      </p>
-    </div>
-
-    {/* Decorative corner element */}
-    <div className="absolute top-0 right-0 w-16 h-16 overflow-hidden">
-      <div className="absolute top-0 right-0 w-20 h-20 bg-black/5 rounded-bl-full transform translate-x-1/2 -translate-y-1/2 group-hover:bg-black/10 transition-colors duration-500"></div>
-    </div>
-  </div>
+  </article>
 );
 
 export default ServiceSectionCard;
