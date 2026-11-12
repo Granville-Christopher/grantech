@@ -1,45 +1,78 @@
 import React, { useEffect, useRef, useState } from "react";
 import { engagementModels } from "./data";
 
-const slotOf = (index: number, active: number, count: number) => {
-  const diff = (((index - active) % count) + count) % count;
-  return diff === count - 1 ? -1 : diff;
+type Role = "offLeft" | "left" | "center" | "right" | "offRight";
+
+const count = engagementModels.length;
+
+const mod = (value: number) => ((value % count) + count) % count;
+
+const place: Record<Role, { left: string; width: string; scale: number; origin: string }> = {
+  offLeft: { left: "-34%", width: "30%", scale: 0.82, origin: "left top" },
+  left: { left: "0%", width: "30%", scale: 0.82, origin: "left top" },
+  center: { left: "32%", width: "36%", scale: 1.18, origin: "center top" },
+  right: { left: "70%", width: "30%", scale: 0.82, origin: "right top" },
+  offRight: { left: "104%", width: "30%", scale: 0.82, origin: "right top" },
 };
 
 const Contact: React.FC = () => {
-  const count = engagementModels.length;
   const [active, setActive] = useState(0);
-  const [wrap, setWrap] = useState<number | null>(null);
+  const [phase, setPhase] = useState<"idle" | "prep" | "go">("idle");
+  const [jump, setJump] = useState(false);
   const paused = useRef(false);
+
+  const leftIndex = mod(active - 1);
+  const rightIndex = mod(active + 1);
+  const moving = phase === "go";
+
+  const cards = [
+    { key: `enter-${rightIndex}-${active}`, index: rightIndex, from: "offLeft" as Role, to: "left" as Role, clone: true },
+    { key: `card-${leftIndex}`, index: leftIndex, from: "left" as Role, to: "center" as Role, clone: false },
+    { key: `card-${active}`, index: active, from: "center" as Role, to: "right" as Role, clone: false },
+    { key: `card-${rightIndex}`, index: rightIndex, from: "right" as Role, to: "offRight" as Role, clone: false },
+  ].filter((card) => phase !== "idle" || !card.clone);
 
   useEffect(() => {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduced) return;
     const id = window.setInterval(() => {
-      if (paused.current) return;
-      setActive((current) => {
-        setWrap((current + 1) % count);
-        return (current + count - 1) % count;
-      });
+      if (paused.current || phase !== "idle") return;
+      setPhase("prep");
     }, 4200);
     return () => window.clearInterval(id);
-  }, [count]);
+  }, [phase]);
 
   useEffect(() => {
-    if (wrap === null) return;
+    if (phase !== "prep") return;
     let inner = 0;
     const outer = requestAnimationFrame(() => {
-      inner = requestAnimationFrame(() => setWrap(null));
+      inner = requestAnimationFrame(() => setPhase("go"));
     });
     return () => {
       cancelAnimationFrame(outer);
       cancelAnimationFrame(inner);
     };
-  }, [wrap]);
+  }, [phase]);
+
+  useEffect(() => {
+    if (phase !== "go") return;
+    const id = window.setTimeout(() => {
+      setJump(true);
+      setActive((current) => mod(current - 1));
+      setPhase("idle");
+    }, 720);
+    return () => window.clearTimeout(id);
+  }, [phase]);
+
+  useEffect(() => {
+    if (!jump) return;
+    const id = requestAnimationFrame(() => setJump(false));
+    return () => cancelAnimationFrame(id);
+  }, [jump]);
 
   return (
     <section id="contact" className="bg-[#f4f5f7] px-3 py-6 md:px-4">
-      <div className="relative overflow-hidden rounded-[2rem] bg-navy px-6 pb-16 pt-16 text-center text-white md:px-10 md:pb-20 md:pt-20">
+      <div className="relative overflow-hidden rounded-[2rem] bg-navy px-[30px] pb-16 pt-16 text-center text-white md:px-16 md:pb-20 md:pt-20">
         <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-cyan">Engage</p>
         <h2 className="mx-auto mt-4 max-w-3xl text-4xl font-semibold tracking-tight md:text-6xl">
           Let’s build
@@ -48,7 +81,7 @@ const Contact: React.FC = () => {
         </h2>
 
         <div
-          className="relative mx-auto mt-14 h-[430px] w-full max-w-6xl sm:h-[250px]"
+          className="relative mx-auto mt-14 h-[340px] w-full max-w-5xl overflow-hidden md:h-[280px]"
           onMouseEnter={() => {
             paused.current = true;
           }}
@@ -56,27 +89,47 @@ const Contact: React.FC = () => {
             paused.current = false;
           }}
         >
-          {engagementModels.map((model, index) => {
-            const slot = slotOf(index, active, count);
-            const center = slot === 0;
-            const snapping = wrap === index;
-            const left = slot === -1 ? "0%" : slot === 0 ? "34%" : "68%";
+          {cards.map((card) => {
+            const role = moving ? card.to : card.from;
+            const spot = place[role];
+            const center = role === "center";
+            const line = "rgba(255,255,255,0.14)";
             return (
               <article
-                key={model.title}
-                className="absolute top-0 w-[32%] rounded-3xl border border-white/10 bg-[#0c1730] p-4 text-left md:p-6"
+                key={card.key}
+                className="absolute top-0 p-4 text-left md:p-6"
                 style={{
-                  left,
-                  transform: `translateY(${center ? 0 : 8}px) scale(${center ? 1.04 : 1})`,
-                  transformOrigin: "center top",
-                  zIndex: center ? 2 : 1,
-                  opacity: 1,
-                  transition: snapping ? "none" : "left 700ms ease, transform 700ms ease",
+                  left: spot.left,
+                  width: spot.width,
+                  transform: `scale(${spot.scale})`,
+                  transformOrigin: spot.origin,
+                  zIndex: center ? 3 : 1,
+                  borderRadius: role === "left" || role === "offLeft" ? "0 1.5rem 1.5rem 0" : role === "right" || role === "offRight" ? "1.5rem 0 0 1.5rem" : "1.5rem",
+                  borderStyle: "solid",
+                  borderWidth: 1,
+                  borderTopColor: line,
+                  borderBottomColor: line,
+                  borderLeftWidth: role === "left" || role === "offLeft" ? 0 : 1,
+                  borderRightWidth: role === "right" || role === "offRight" ? 0 : 1,
+                  background: "#0c1730",
+                  WebkitMaskImage:
+                    role === "left" || role === "offLeft"
+                      ? "linear-gradient(90deg, transparent 0%, #000 12%, #000 100%)"
+                      : role === "right" || role === "offRight"
+                        ? "linear-gradient(270deg, transparent 0%, #000 12%, #000 100%)"
+                        : "none",
+                  maskImage:
+                    role === "left" || role === "offLeft"
+                      ? "linear-gradient(90deg, transparent 0%, #000 12%, #000 100%)"
+                      : role === "right" || role === "offRight"
+                        ? "linear-gradient(270deg, transparent 0%, #000 12%, #000 100%)"
+                        : "none",
+                  transition: jump ? "none" : "left 700ms ease, width 700ms ease, transform 700ms ease",
                 }}
               >
-                <h3 className="text-base font-semibold md:text-lg">{model.title}</h3>
-                <p className="mt-3 text-xs leading-relaxed text-white/60 md:text-sm">{model.description}</p>
-                <p className="mt-5 text-xs font-medium text-cyan md:text-sm">{model.priceAnchor}</p>
+                <h3 className="text-base font-semibold md:text-lg">{engagementModels[card.index].title}</h3>
+                <p className="mt-3 text-xs leading-relaxed text-white/60 md:text-sm">{engagementModels[card.index].description}</p>
+                <p className="mt-5 text-xs font-medium text-cyan md:text-sm">{engagementModels[card.index].priceAnchor}</p>
               </article>
             );
           })}
