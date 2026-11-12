@@ -27,8 +27,14 @@ const Contact: React.FC = () => {
 
   useEffect(() => {
     if (wrap === null) return;
-    const id = window.setTimeout(() => setWrap(null), 720);
-    return () => window.clearTimeout(id);
+    let inner = 0;
+    const outer = requestAnimationFrame(() => {
+      inner = requestAnimationFrame(() => setWrap(null));
+    });
+    return () => {
+      cancelAnimationFrame(outer);
+      cancelAnimationFrame(inner);
+    };
   }, [wrap]);
 
   return (
@@ -42,7 +48,7 @@ const Contact: React.FC = () => {
         </h2>
 
         <div
-          className="relative mx-auto mt-14 h-[300px] max-w-4xl sm:h-[280px]"
+          className="relative mx-auto mt-14 h-[430px] w-full max-w-6xl sm:h-[250px]"
           onMouseEnter={() => {
             paused.current = true;
           }}
@@ -54,22 +60,23 @@ const Contact: React.FC = () => {
             const slot = slotOf(index, active, count);
             const center = slot === 0;
             const snapping = wrap === index;
+            const left = slot === -1 ? "0%" : slot === 0 ? "34%" : "68%";
             return (
               <article
                 key={model.title}
-                className="absolute left-1/2 top-0 w-[min(78%,20rem)] rounded-3xl border border-white/10 bg-[#0c1730] p-6 text-left shadow-[0_18px_50px_rgba(0,0,0,0.28)]"
+                className="absolute top-0 w-[32%] rounded-3xl border border-white/10 bg-[#0c1730] p-4 text-left md:p-6"
                 style={{
-                  transform: `translateX(calc(-50% + ${slot * 12}vw)) translateY(${center ? 0 : 26}px) scale(${center ? 1.12 : 0.76})`,
-                  zIndex: center ? 3 : 1,
-                  opacity: snapping ? 0 : center ? 1 : 0.55,
-                  transition: snapping
-                    ? "none"
-                    : "transform 700ms ease, opacity 700ms ease",
+                  left,
+                  transform: `translateY(${center ? 0 : 8}px) scale(${center ? 1.04 : 1})`,
+                  transformOrigin: "center top",
+                  zIndex: center ? 2 : 1,
+                  opacity: 1,
+                  transition: snapping ? "none" : "left 700ms ease, transform 700ms ease",
                 }}
               >
-                <h3 className="text-lg font-semibold">{model.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-white/60">{model.description}</p>
-                <p className="mt-5 text-sm font-medium text-cyan">{model.priceAnchor}</p>
+                <h3 className="text-base font-semibold md:text-lg">{model.title}</h3>
+                <p className="mt-3 text-xs leading-relaxed text-white/60 md:text-sm">{model.description}</p>
+                <p className="mt-5 text-xs font-medium text-cyan md:text-sm">{model.priceAnchor}</p>
               </article>
             );
           })}
