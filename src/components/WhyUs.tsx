@@ -7,7 +7,7 @@ const WhyUs: React.FC = () => {
       <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-12">
         <div className="lg:col-span-4">
           <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-navy/40">Why GranTech</p>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-navy md:text-4xl">
+          <h2 className="mt-3 text-2xl font-semibold tracking-tight text-navy md:text-4xl">
             One senior team. Design and engineering together
           </h2>
         </div>

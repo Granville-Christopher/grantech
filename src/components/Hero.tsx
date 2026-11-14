@@ -4,16 +4,16 @@ import ProjectLink from "./ProjectLink";
 
 const Hero: React.FC = () => {
   return (
-    <section id="home" className="bg-[#f4f5f7] px-6 pb-8 pt-36 text-center md:pt-40">
+    <section id="home" className="bg-[#f4f5f7] px-[30px] pb-8 pt-32 text-center md:px-6 md:pt-40">
       <div className="mx-auto max-w-4xl">
         <p className="mx-auto inline-flex items-center gap-2 rounded-full border border-navy/10 bg-white px-3 py-1 text-[12px] font-medium text-navy/70">
           <span className="h-1.5 w-1.5 rounded-full bg-cyan" />
           Enterprise software studio
         </p>
-        <h1 className="mx-auto mt-6 max-w-3xl text-4xl font-semibold leading-[1.05] tracking-tight text-navy sm:text-6xl">
+        <h1 className="mx-auto mt-5 max-w-3xl text-[1.65rem] font-semibold leading-tight tracking-tight text-navy sm:mt-6 sm:text-5xl md:text-6xl">
           Enterprise-grade software that drives growth
         </h1>
-        <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-navy/60 sm:text-lg">
+        <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-navy/60 sm:mt-5 sm:text-lg">
           We design, build, and run secure products for companies that need the software to hold up in production.
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">

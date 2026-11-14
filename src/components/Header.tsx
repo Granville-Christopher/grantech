@@ -40,7 +40,7 @@ const Header: React.FC = () => {
         </svg>
       </a>
       <header className="border-b border-navy/10 bg-[#f4f5f7]/90 backdrop-blur-md">
-        <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
+        <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-[18px] md:h-16 md:px-6">
           <a href="#home" className="text-navy" aria-label="GranTech home">
             <Logo />
           </a>

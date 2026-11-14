@@ -30,7 +30,7 @@ const FAQ: React.FC = () => {
     <section id="faq" className="bg-[#f4f5f7] px-6 py-20 md:py-24">
       <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-12">
         <div className="lg:col-span-4">
-          <h2 className="text-3xl font-semibold tracking-tight text-navy md:text-4xl">FAQs</h2>
+          <h2 className="text-2xl font-semibold tracking-tight text-navy md:text-4xl">FAQs</h2>
           <a href="#contact" className="mt-6 inline-flex text-sm font-semibold text-electric">
             Ask something else
           </a>

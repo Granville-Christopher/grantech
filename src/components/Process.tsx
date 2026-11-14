@@ -7,7 +7,7 @@ const Process: React.FC = () => {
       <div className="mx-auto max-w-6xl">
         <div className="max-w-2xl">
           <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-navy/40">Process</p>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-navy md:text-4xl">
+          <h2 className="mt-3 text-2xl font-semibold tracking-tight text-navy md:text-4xl">
             You always know what happens next
           </h2>
         </div>
