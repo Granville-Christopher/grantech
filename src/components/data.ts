@@ -199,12 +199,16 @@ export const testimonials: Testimonial[] = [
   },
 ];
 export const techStack: TechStack[] = [
-  { id: 1, name: "TypeScript/React", icon: "typescript-react" },
-  { id: 2, name: "Node.js/Go", icon: "nodejs-go" },
-  { id: 3, name: "AWS/GCP Cloud", icon: "aws-gcp" },
-  { id: 4, name: "Tailwind CSS", icon: "tailwind" },
-  { id: 5, name: "Next.js/Serverless", icon: "nextjs" },
-  { id: 6, name: "DevSecOps", icon: "shield" },
+  { id: 1, name: "TypeScript", icon: "typescript" },
+  { id: 2, name: "React", icon: "react" },
+  { id: 3, name: "Python", icon: "python" },
+  { id: 4, name: "Node.js", icon: "node" },
+  { id: 5, name: "Go", icon: "go" },
+  { id: 6, name: "AWS", icon: "aws" },
+  { id: 7, name: "Google Cloud", icon: "gcp" },
+  { id: 8, name: "Tailwind CSS", icon: "tailwind" },
+  { id: 9, name: "Next.js", icon: "next" },
+  { id: 10, name: "DevSecOps", icon: "shield" },
 ];
 export const engagementModels: EngagementModel[] = [
   {
