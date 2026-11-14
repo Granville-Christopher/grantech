@@ -70,7 +70,7 @@ const Header: React.FC = () => {
             />
             <button
               type="button"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-navy/15 text-navy md:hidden"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-navy/15 text-navy transition-[color,background-color,border-color,transform] duration-300 hover:border-navy hover:bg-navy hover:text-white active:scale-[0.98] md:hidden"
               onClick={() => setOpen((value) => !value)}
               aria-label={open ? "Close menu" : "Open menu"}
             >
@@ -79,21 +79,31 @@ const Header: React.FC = () => {
           </div>
         </div>
         {open && (
-          <div className="border-t border-navy/10 bg-[#f4f5f7] px-6 py-4 md:hidden">
+          <div className="border-t border-navy/10 bg-[#f4f5f7] px-3 py-3 md:hidden">
             {links.map(([label, href]) => (
               <a
                 key={label}
                 href={href}
                 onClick={() => setOpen(false)}
-                className="block border-b border-navy/10 py-3 text-base text-navy"
+                className="group flex items-center justify-between rounded-2xl px-4 py-3.5 text-base font-medium text-navy/70 transition-[color,background-color,transform] duration-300 hover:bg-navy hover:text-white active:scale-[0.99] active:bg-navy active:text-white"
               >
                 {label}
+                <svg
+                  viewBox="0 0 18 18"
+                  className="h-4 w-4 -translate-x-1.5 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 group-active:translate-x-0 group-active:opacity-100"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.25"
+                  aria-hidden="true"
+                >
+                  <path d="M3.75 9h9M9 14.25 14.25 9 9 3.75" />
+                </svg>
               </a>
             ))}
             <a
               href="#contact"
               onClick={() => setOpen(false)}
-              className="mt-4 inline-flex w-full justify-center rounded-full bg-navy px-4 py-3 text-sm font-semibold text-white"
+              className="mt-2 inline-flex w-full justify-center rounded-full bg-navy px-4 py-3 text-sm font-semibold text-white transition-[background-color,transform] duration-300 hover:bg-primary active:scale-[0.98]"
             >
               Start a project
             </a>

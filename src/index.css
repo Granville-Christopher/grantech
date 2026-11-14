@@ -231,15 +231,7 @@ button:focus-visible {
 }
 
 .footer-word {
-  font-family: Manrope, Inter, sans-serif;
-  font-size: clamp(2.05rem, 11vw, 3.2rem);
-  font-weight: 800;
-  letter-spacing: 0.12em;
-}
-
-@media (min-width: 640px) {
-  .footer-word {
-    font-size: clamp(6rem, 15vw, 13rem);
-    letter-spacing: 0.22em;
-  }
+  display: block;
+  width: 100%;
+  height: auto;
 }

@@ -16,8 +16,8 @@ const columns = [
     title: "Contact",
     links: [
       ["contact@granvillebuchi.com", "mailto:christophergranville0@gmail.com"],
-      ["+234 705 196 2741", "tel:+2347051962741"],
-      ["WhatsApp", "https://wa.me/+2347051962741"],
+      ["+234 913 387 1053", "tel:+2349133871053"],
+      ["WhatsApp", "https://wa.me/+2349133871053"],
     ],
   },
   {
@@ -38,16 +38,25 @@ const Footer: React.FC = () => {
             <Logo tone="light" />
             <p className="text-xs text-white/45 sm:text-sm">© {new Date().getFullYear()}. GranTech IT Solutions</p>
           </div>
-          <nav className="grid grid-cols-1 gap-8 min-[400px]:grid-cols-2 min-[400px]:gap-x-8 sm:grid-cols-3 sm:gap-x-16">
+          <nav className="grid grid-cols-2 gap-x-8 gap-y-8 sm:grid-cols-[max-content_max-content_max-content] sm:gap-x-12 lg:gap-x-16">
             {columns.map((column) => (
-              <div key={column.title} className="flex flex-col gap-3">
+              <div
+                key={column.title}
+                className={`flex flex-col gap-3 ${
+                  column.title === "Social"
+                    ? "col-start-2 row-start-1 sm:col-start-3"
+                    : column.title === "Contact"
+                      ? "col-span-2 row-start-2 sm:col-span-1 sm:col-start-2 sm:row-start-1"
+                      : "col-start-1 row-start-1"
+                }`}
+              >
                 <p className="text-xs font-semibold text-white sm:text-sm">{column.title}</p>
                 <ul className="flex flex-col gap-2.5">
                   {column.links.map(([label, href]) => (
                     <li key={label}>
                       <a
                         href={href}
-                        className="break-words text-xs text-white/50 transition-colors duration-300 hover:text-white sm:text-sm"
+                        className="whitespace-nowrap text-xs text-white/50 transition-colors duration-300 hover:text-white sm:text-sm"
                       >
                         {label}
                       </a>
@@ -59,19 +68,37 @@ const Footer: React.FC = () => {
           </nav>
         </div>
         <div className="relative px-[30px] pb-8 pt-2 sm:mt-6 sm:h-[16rem] sm:overflow-hidden sm:px-4 sm:pb-0">
-          <p
+          <svg
             aria-hidden="true"
-            className="footer-word mx-auto block w-full whitespace-nowrap text-center uppercase leading-none text-transparent sm:absolute sm:left-1/2 sm:top-0 sm:w-max sm:-translate-x-1/2"
-            style={{
-              backgroundImage:
-                "linear-gradient(180deg, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0.08) 46%, rgba(186,220,236,0.03) 100%)",
-              WebkitBackgroundClip: "text",
-              backgroundClip: "text",
-              WebkitTextStroke: "1px rgba(255,255,255,0.1)",
-            }}
+            viewBox="0 0 940 150"
+            className="footer-word relative z-[1] mx-auto max-w-[1080px] sm:absolute sm:left-1/2 sm:top-3 sm:w-[min(92%,1120px)] sm:-translate-x-1/2"
           >
-            grantech
-          </p>
+            <defs>
+              <linearGradient id="footer-glass" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor="rgba(255,255,255,0.42)" />
+                <stop offset="46%" stopColor="rgba(255,255,255,0.16)" />
+                <stop offset="100%" stopColor="rgba(186,220,236,0.05)" />
+              </linearGradient>
+            </defs>
+            <g
+              fill="none"
+              stroke="url(#footer-glass)"
+              strokeWidth="26"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M92 40C68 18 24 30 22 76c-2 46 40 62 74 40V84H52" />
+              <path d="M132 22v108" />
+              <path d="M132 34h46c30 0 30 46 0 46h-46" />
+              <path d="M156 80l52 50" />
+              <path d="M250 130L292 24l42 106" />
+              <path d="M372 130V24l78 106V24" />
+              <path d="M490 24h78M529 24v108" />
+              <path d="M608 24h74M608 24v108M608 76h56M608 132h74" />
+              <path d="M804 42c-28-24-78-18-84 34s48 64 86 40" />
+              <path d="M844 24v108M916 24v108M844 76h72" />
+            </g>
+          </svg>
           <div
             className="pointer-events-none absolute inset-x-0 bottom-0 hidden h-[70%] sm:block"
             style={{
